@@ -1,0 +1,97 @@
+#We start our coding by asking the computer to print
+
+#print("Hello world!")
+
+#Strings: They show the beginning and the end of a character
+
+# Note that programmers makes mistake, figuring out the solution makes you a great programmer
+
+#Note that, when you enter a typo error, the code will show you colours different from others in that case, you are to copy the error message and take it to google and search for solution (stackoverflow)
+
+#My error message
+
+#print("Welcome to Python 100 days of coding")
+
+#(The error is a syntax error with single quote instead of a double one)
+
+'''print("Day 1 - Python Functions")'''
+print("The function is declared like this: ")
+print("print('what to print')")
+
+print("Hello world!\nHello world!")
+
+
+'''Day 1.1 - String Concatenation'''
+#to concatenate string in another characters is merging two separating charaters into becoming one
+
+print("Hello " + " " + "Atung")
+
+
+'''Day 1.2 - Debugging'''
+#Debugging is fixing possible errors in typing and mispellings etc
+print("Day 1 - String Manipulation")
+print("String Concatenation is done with the '+' sign")
+print('e.g. print("Hello world")')
+print("New lines can be created with a backlash and n.")
+
+'''Day 1.3.1 - The Python Input Function'''
+#to input a function is asking the user to enter something e.g name, age, location etc.
+#1.0 input("What is your name? ")
+print("Hello " + input("What is your name? "))
+#Here we concatenate the print function and the input function to arrive at Hello Atung as our output
+
+'''Day 1.3.2 - Input Exercise'''
+# Exercise: Write a program that prints the number of characters in a user's name 
+name = input("What is your name? ")
+print(len(name))
+# or
+print(len(input("What is your name? ")))
+
+# or
+name = input("What is your status ?")
+length = len(name)
+print(length)
+
+
+'''Day 1.3.3 - Python Variables'''
+# Variable is something that can be changed or varied
+
+name = input("What is your name? ")
+print("Hello " + name)
+
+'''Day 1.4.1 - Variables Exercise'''
+# Exercise: Write a program that switches the values stored in the variables a and b
+
+a = input("a: ")
+b = input("b: ")
+
+temp = a
+a = b
+b = temp
+
+print("\nThe value of a switches to b vice versa\n")
+
+print("a: ", a)
+print("\nb: ", b)
+
+'''Day 1.4.2 - Variables Naming'''
+# It is very important to use a name is readable that you can understand even after coming back six month letter to read the code example
+
+user_name = "Sebastine\n"
+print(user_name)
+
+name_of_school = "University of Abuja"
+print(name_of_school)
+
+''' Day_1_Project'''
+#1. Create a greeting for your program.
+print("Welcome to the Band Name Generator\n")
+#2. Ask the user for the city that they grew up in.
+name_of_city = input("What is the name of the city you grew from?\n")
+#3. Ask the user for the name of a pet.
+name_of_pet = input("\nWhat is the name of your pet\n")
+#4. Combine the name of their city and pet and show them their band name.
+print("\nYour city is: " + name_of_city + " and your pet is: " + name_of_pet)
+#5. Make sure the input cursor shows on a new line:
+
+# Solution: https://replit.com/@appbrewery/band-name-generator-end
