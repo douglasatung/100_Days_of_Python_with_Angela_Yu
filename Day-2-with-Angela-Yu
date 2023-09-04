@@ -1,0 +1,247 @@
+'''Day-2: Exploration of Data types such as strings, integer, float and boolean and 
+#The method of pulling out a particular element from a string is call subscripting
+# Printing a specific number from list of numbers'''
+
+# To print the letter o, we use example 1 or 2
+print("Hello"[-1])
+#or
+print("Hello"[4])
+print("5 + 2")
+print(32 - 5)
+
+# Integers are absolute numerical values for example
+120
+
+# Float are numerical values with decimal points example
+
+1.205
+
+# Boolean are values with either is True or False
+True
+False
+
+'''Day-2.0: Type Error, Type checking and type conversion'''
+
+num_char = len(input("What is your name "))
+# For us to get our desired value without breaking, we need to convert num_char into strings 
+new_num_char = str(num_char)
+print("\nYour name has " + new_num_char + " characters.")
+
+# To check data type, we define the variable and check their type such as
+
+a = 12563
+
+# To check the type of a we code that
+
+print(type(a))
+
+# The above states that a is an integer. Now lets say we write
+
+a1 = str(12563)
+print(type(a1))
+
+# The value of a1 printed as a string
+
+# Now lets say we write
+a2 = float(12563)
+print(type(a2))
+# The value of a1 printed as a float
+
+# What will this line of code print below?
+
+print(76 + float("120.3"))
+
+# The out for this code is 196.3
+
+'''Day-2.1: Data Types Exercise'''
+
+# Example: Write a program that adds the digits in a 2 digit number. e.g. if the input was 65, then the output should be 6 + 5 = 11
+
+# 🚨 Don't change the code below 👇
+two_digit_number = input("Type a two digit number: ")
+# 🚨 Don't change the code above 👆
+
+####################################
+#Write your code below this line 👇
+# We define the variables for first and second value and also print out the list value for each number
+first_value = two_digit_number[0]
+second_value = two_digit_number[1]
+
+# We very the type of two_digit_number
+# print(type(two_digit_number))
+# And we found that the type is a string
+
+# We now convert the first and second value into integers
+result = int(first_value) + int(second_value)
+# Print the value of the result
+print(result)
+
+'''Day-2.1.1: Mathematical Operations in Python'''
+
+# In python just like in Mathematics, following symbols steel maintains their normal meaning
+
++ multiplication
+- Subtraction
+/ Division with a float value
+// Division with int value 
+* Multiplication
+** Exponential of any numerical value 
+
+# In python, we have a mathematical procedure called PEMDASL
+
+# P - Parenthesis
+# E - Exponential
+# M - Multiplication
+# D - Division 
+# A - Addition
+# S - Subtraction
+# LR - Left to Right
+
+# Exercise: print 3*3+3/3-3 to obtain an integer not a float value
+
+# Answer is, we divide the value of with double multiplication symbol i.e. //
+
+print(3 * 3 + 3 // 3 - 3)
+
+# The value obtained is 7 not 7.0
+
+# Also to print something out of the order of the PEMDAS, we can isolate 3 + 3 inside parenthesis for the computer to compute it first before others e.g
+
+print(3 * (3 + 3) // 3 - 3)
+
+# This means the computer first solve 3 + 3 before solving the others'''
+
+'''Day 2.1.2 Calculation of PROJECT_1_(Body Mass Index: BMI)'''
+
+# 🚨 Don't change the code below 👇
+height = input("enter your height in m: ")
+weight = input("enter your weight in kg: ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+# Calculating the Body Mass Index converting the weight and height into integers and floats
+bmi = int(weight) / float(height) ** 2
+
+# To obtain an integer as the body mass index, we convert the bmi into integers
+bmi_as_int = int(bmi)
+# Print the bmi as integers
+print(bmi_as_int)
+
+
+'''Day 2.2: Number manipulation and F-Strings in Python'''
+
+# We can carry out arithmetic calculations in python i.e. addition, subtraction, multiplication and division
+
+# 8 / 3 will give a remainder of 2.6666
+print(8 / 3)
+
+# We can get a round figure without any decimal place
+
+print(round(8 / 3))
+# We can also round the numbers into any decimal point via
+
+print(round(8 / 3, 3)) 
+# This meant that we calculate into three decimal points
+
+# or we can calculate to get an integer without rounding the figures using the double slash (//) with getting any decimal point e.g
+
+print(8 // 3)
+
+# We can carry out an arithmetic calculation and still continue the calculation, lets say we divide 4 / 2 and also want to divide the value by another 2 again, we write as
+
+result = 4 / 2
+# to further divide the value of the result by another number we write as
+
+result /= 2
+
+# now printing the result will give us the final value of 4/2/2=1 as a float number
+
+print(result)
+
+# Addition of continues arithmetic calculations
+
+score = 0
+# Adding another score we have
+score += 1
+# Printing the sum of score = 0 + 1
+print(score)
+
+# Subtraction
+age = 15
+# Subtracting two more years
+age -= 3
+print("Your new age is now: ", age)
+
+# Multiplication
+salary = 1200
+# Multiplying monthly salary by two months
+salary *= 2
+# print
+print("Your two months salary is now: ", salary)
+
+# F-STRING coding
+# Printing strings, integers, and booleans can be very difficult because one will need to concatenate all three at one, but with the use of f-string, we can print as many variables as we want such as
+
+score = 10
+height = 1.69
+can_swim = True
+
+# To print the three, we need to insert letter f in front of the string variable we are printing
+print(f"Your arithmetic score is: {score}, also your height is {height}m, and that the rumor flying round saying you can swim is {can_swim }")
+# After inserting the print(f""{}) the curly braces are used to insert the values of other variables we want to print along with the variable saving us from concatenation complications
+
+'''Day 2.3: PROJECT_2_[Interactive coding exercise] Life in weeks'''
+
+# 🚨 Don't change the code below 👇
+age = input("What is your current age? ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+#Converting my current age into an integer 
+current_age_int = int(age)
+
+# Defining the maximum age which is 90
+
+maximum_age = 90
+
+# Calculating the remaining years is subtracting the current_age_int from the maximum_age that is
+
+remaining_age = maximum_age - current_age_int
+# We first multipy each of the days, weeks and months remaining for the person to reach 90years that is
+
+remaining_days = remaining_age * 365
+remaining_weeks = remaining_age * 52
+remaining_months = remaining_age * 12
+
+# Printing the program showing the remaining years left for one to reach 90years, showing the remaining days, weeks and months using formating string (f-string)
+# print(f"\nIf you live until {maximum_age} years old.")
+print(f"\nYou have {remaining_days} days, {remaining_weeks} weeks, and {remaining_months} months left.")
+
+
+'''Day 2 PROJECT_3_: Tip Calculator'''
+# Print a welcome statement
+print("Welcome to the tip calculator!")
+
+# Input the bill value as float
+bill = float(input("What was the total bill? $ "))
+
+# Input the percentage of the tip
+tip = int(input("How much percentage would you like to give? 10, 12, or 15? "))
+
+# people to split the bill
+
+people = int(input("How many people to split the bill? "))
+
+# Now to calculate the bill with tip
+tip_as_percent = tip / 100
+
+total_tip_amount = bill * tip_as_percent
+
+total_bill = bill + total_tip_amount
+
+bill_per_person = total_bill / people
+final_amount = round(bill_per_person, 2)
+
+final_amount ="{:.2f}".format(bill_per_person)
+
+print(f"Each person should pay: ${final_amount}")
