@@ -1,0 +1,278 @@
+'''Day 3.0: Control flow with if/else and conditional operators'''
+# If statement is stating the condition that either something is true or not, for example a rollercoaster requirement for heights of 120cm and above only
+
+print("Welcome to the rollercoaster ride")
+# The user is asked to input their heights in cm, and condition given here is that, if the rider is 120cm or above, he/she can ride else, they have to wait until they grow taller
+
+height = int(input("\nState your height in cm: "))
+# The conditional statement is showing if the user is above 120cm they can ride else they can't
+if height >= 120:
+  print("\nYes, you can ride the rollercoaster")
+  # If they are not upto 120cm, the can't ride the rollercoaster
+else:
+  print("\nSorry, you can't ride the rollercoaster")
+
+'''Day 3.1: Odd or Even Exercise'''
+# Example: write a program that works out whether if a given number is an odd or even number
+number = int(input("Enter any number for checking: "))
+
+# Using the conditional statement to check the number
+if number % 2 == 0:
+  print("This is a even number")
+# If the number is not even, then the statement should read as
+else:
+  print("This is an odd number")
+
+'''Day 3.1.2: Nested if statements and elif statements'''
+
+# EXAMPLE: Write a program showing that the user can use the rollercoaster with variosus amount within a age brackets in nested if statement
+
+height = int(input("State your height in cm: "))
+# The conditional statement is showing if the user is above 120cm they can ride else they can't
+if height >= 120:
+  print("\nYes, you can ride the rollercoaster")
+  age = int(input("Enter your age: "))
+  if age < 12:
+    print("Your ticket fee is $5.")
+  elif age <= 18:
+    print("Your ticket fee is $7.")
+  elif age <= 22:
+    print("Your ticket fee is $10.")
+  else:
+    print("Your ticket is $12.")
+  # If they are not upto 120cm, the can't ride the rollercoaster
+else:
+  print("\nSorry, you can't ride the rollercoaster")
+
+'''Day 3.2: BMI 2.0 Exercise'''
+# Example: Calculate the body mass index 2.0
+
+# Inputint the weight and height of the user
+
+weight = float(input("Enter your weight in kg? "))
+height = float(input("Enter your height in m: "))
+
+# Calculating the BMI we have that
+
+bmi = round(weight / height ** 2)
+
+# Stating our conditional statements using if and elif statements
+
+if bmi < 18.5:
+  print(f"Your BMI is {bmi}, you are underweight.")
+elif bmi < 25:
+  print(f"Your BMI is {bmi}, you have a normal weight.")
+elif bmi < 30:
+  print(f"Your BMI is {bmi}, you are slightly overweight.")
+elif bmi < 35:
+  print(f"Your BMI is {bmi}, you are obese.")
+else:
+  print(f"Your BMI is {bmi}, and you are clinically obese.")
+
+'''Day 3.3.0: Leap Year Exercise'''
+# Checking on when the input year is a leap year
+
+year = int(input("\nWhich year do you want to check? "))
+
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+  print(f"\n{year} is a leap year")
+else:
+  print(f"\n{year} is not a leap year")
+
+# or
+if year % 4 == 0:
+  if year % 100 == 0:
+    if year % 400 == 0:
+      print("Leap year")
+    else:
+      print("Not leap year")
+  else:
+    print("Leap year")
+else:
+  print("Not leap year")
+
+'''Day 3.3.1: Multiple if statements in succession'''
+
+# EXAMPLE: Write a program showing that the user can use the rollercoaster with with an option of taking a picture as well
+
+height = int(input("State your height in cm: "))
+# Enter the bill
+bill = 0
+# The conditional statement is showing if the user is above 120cm they can ride else they can't with various prices for each category
+
+if height >= 120:
+  print("\nYes, you can ride the rollercoaster")
+  age = int(input("Enter your age: "))
+  if age < 12:
+    bill = 5
+    print("Your ticket fee is $5.")
+  elif age <= 18:
+    bill = 7
+    print("Your ticket fee is $7.")
+  elif age <= 22:
+    bill = 10
+    print("Your ticket fee is $10.")
+  else:
+    bill = 12
+    print("Your ticket is $12.")
+  # This is an input asking the user if he/she will want a picture
+  want_a_picture = input("Will you like   to take a picture? Yes or No ")
+  if want_a_picture == "Yes":
+    bill += 3
+  print(f"Your bill is now ${bill}")
+  
+  # If they are not upto 120cm, the can't ride the rollercoaster
+else:
+  print("\nSorry, you can't ride the rollercoaster")
+
+'''Day 3.4.0: Pizza Order Exercise'''
+
+# Write a program to order pizza
+print("Welcome to Atung pizza deliveries shop!")
+
+size = input("What size of pizza will you like to have? S, M or L ")
+
+# Should the customer need extra pepperoni and cheese
+
+add_pepperoni = input("Will love to add pepperoni? Y or N ")
+extra_cheese = input("Will you love to add extra cheese? Y or N ")
+
+# Introducing the bill
+bill = 0
+
+if size == "S":
+  bill += 15
+elif size == "M":
+  bill += 20
+else:
+  bill += 25
+
+if add_pepperoni == "Y":
+  if size == "S":
+    bill += 2
+  else:
+    bill += 3
+if extra_cheese == "Y":
+  bill += 1
+print(f"Your total bill is ${bill}.")
+
+
+'''Day 3.4.1: Logical Operators'''
+# The logical operators consist of three items namely AND(When both conditions are true), OR (When one of the conditions is true) and NOT (when the condition is not true)
+
+# From our rollercoaster example, we will use the AND to carry out a task granting people with age 45 to 55 free rollercoaster ride
+
+
+height = int(input("State your height in cm: "))
+# Enter the bill
+bill = 0
+# The conditional statement is showing if the user is above 120cm they can ride else they can't with various prices for each category
+
+if height >= 120:
+  print("\nYes, you can ride the rollercoaster")
+  age = int(input("Enter your age: "))
+  if age < 12:
+    bill = 5
+    print("Your ticket fee is $5.")
+  elif age <= 18:
+    bill = 7
+    print("Your ticket fee is $7.")
+  elif age <= 22:
+    bill = 10
+    print("Your ticket fee is $10.")
+  elif age >= 45 and age <= 55:
+    print("Everything is going to be ok. Have a free ride")
+  else:
+    bill = 12
+    print("Your ticket is $12.")
+  # This is an input asking the user if he/she will want a picture
+  want_a_picture = input("Will you like   to take a picture? Yes or No ")
+  if want_a_picture == "Yes":
+    bill += 3
+  print(f"Your bill is now ${bill}")
+  
+  # If they are not upto 120cm, the can't ride the rollercoaster
+else:
+  print("\nSorry, you can't ride the rollercoaster")
+
+'''Day 3.5: Love Calculator Exercise'''
+
+# 🚨 Don't change the code below 👇
+print("Welcome to the Love Calculator!")
+name1 = input("What is your name? \n")
+name2 = input("What is their name? \n")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+combine_strings = name1 + name2
+
+# Converting all cases to lower cases
+lower_case_strings = combine_strings.lower()
+
+t = lower_case_strings.count("t")
+r = lower_case_strings.count("r")
+u = lower_case_strings.count("u")
+e = lower_case_strings.count("e")
+
+true = t + r + u + e
+
+l = lower_case_strings.count("l")
+o = lower_case_strings.count("o")
+v = lower_case_strings.count("v")
+e = lower_case_strings.count("e")
+
+love = l + o + v + e
+
+love_score = int(str(true) + str(love))
+
+if love_score < 10 or love_score > 90:
+    print(f"Your score is {love_score}, you go together like coke and mentos.")
+elif love_score >= 40 and love_score <= 50:
+    print(f"Your score is {love_score}, you are alright together.")
+else:
+    print(f"Your score is {love_score}")
+
+
+'''Day 3.6: Project: TREASURE ISLAND'''
+
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.\n")
+print("Your mission is to find the treasure.\n") 
+choice1 = input("You're at a crossroad, where do you want to go? Type 'left' or right ").lower()
+if choice1 == "left":
+    choice2 = input("\nYou've come to a lake. There is an island in the middle of the lake. Type 'Wait' for a boat. Type 'swim' to swim across ").lower()
+    if choice2 == "wait":
+        choice3 = input("\nYou've arrived the island unharmed. There is a house with three doors. One red, one yellow and one blue. Which colour do you choose? ").lower()
+        if choice3 == "yellow":
+            print("\nCongratulations! You've found the treasure. You win")
+        elif choice3 == "red":
+            print("\nIt's a room full of fire. Game over.")
+        elif choice3 == "blue":
+            print("\nYou fell into a dungeon filled with wild insects. Game over.")
+        else:
+            print("\nYou've got attacked by angry trouts. Game over.")
+    else:
+        print("\nYou fell into a hole. Game over.")
+else:
+    print("\nYou've missed the right direction. Game over.")
