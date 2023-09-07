@@ -1,0 +1,214 @@
+'''Day 4.1.0: Random Module'''
+# We import random numbers to our code
+import random
+
+random_integer = random.randint(1, 10)
+print(random_integer)
+# We can create our separate module from this main.py and import it to our code when the need arises e.g
+
+import my_module
+
+
+# When we import this module and wish to print, the value of the module is what we will obtain as our output
+print(my_module.pi)
+
+# Random float, to obtain a floating random number can be written after importing the random
+random_float = random.random()
+print(random_float)
+
+# We can multiply the random float by a number let say 5. The random number multiply will print values not upto 5 but around 4.9999
+random_float_by_5 = random.random() * 5
+print(random_float_by_5)
+
+# From our love calculator, we can make our love score to be random in which we can generate different values of love_score whenever we run the code of integers between 1, 100
+
+love_score = random.randint(1, 100)
+print(f"Your love score is {love_score}")'''
+
+'''Day 4.1.1: Heads or Tails''' Exercise
+# Importing random
+import random
+# Assigning variable showing the random value which are integers
+random_site = random.randint(0, 1)
+# Stating conditional statements for the toss to be either 0 or 1
+if random_site == 1:
+  print("Heads")
+else:
+  print("Tail")
+
+'''Day 4.1.2: Understanding the Offset and Appending Items to Lists'''
+
+# A list is in other words call data structure: And this is used in organizing storing data data in python.
+
+# Now we are going to see ways of storing multiple data
+
+# List is very simple with square bracket [ ] assigned to items which are in double quotes for examples
+
+fruits = ['Cherry', 'Apple', 'Pear']
+
+print(fruits)
+
+# Another example is storing the states of the US
+
+States_of_America = ['Delaware', 'Pennsylvania', 'New Jersey', 'Georgia', 'Connecticut', 'Massachusetts', 'Maryland', 'South Carolina', 'New Hampshire', 'Virginia', 'New York', 'North Carolina', 'Rhode Island', 'Vermont', 'Kentucky', 'Tennessee', 'Ohio', 'Louisiana', 'Indiana', 'Mississippi', 'Illinois', 'Alabama', 'Maine', 'Missouri', 'Arkansas', 'Michigan', 'Florida', 'Texas', 'Iowa', 'Wisconsin', 'California', 'Minnesota', 'Oregon', 'Kansas', 'West Virginia', 'Nevada', 'Nebraska', 'Colorado', 'North Dakota', 'South Dakota', 'Montana', 'Washington', 'Idaho', 'Wyoming', 'Utah', 'Oklahoma', 'New Mexico', 'Arizona', 'Alaska', 'Hawaii']
+# We can print a particular item on the list by stating the numerical equivalence of the item example
+
+
+
+# Extending lists at the end of the coding lines
+States_of_America.extend(['Abuja', 'Kaduna', 'Anambra', 'Taraba', 'Bauchi'])
+# To append another item into the list
+States_of_America.append('Atungland')
+# To remove an item with the name ' '
+States_of_America.remove('Oklahoma')
+# Inserting an item into the list with (5-location of the item, 'Inserted_item')
+States_of_America.insert(8, 'Enugu')
+
+# printing a specific item on the list
+print(States_of_America[8])
+# Printing the last item on the list
+print(States_of_America[-1])
+# We can rename or change the spelling of an item let say Kogi
+
+States_of_America[25] = 'Kogi'
+print(States_of_America)
+
+'''4.1.3[Interactive Coding Exercise] Banker Roulette - Who will pay the bill?'''
+
+# PROJECT: Write a program that will select random name from a list of friends 
+# Importing random
+import random
+# Inputing the list of names
+names_of_persons = input("Enter the names of persons at the restaurant: ")
+# Splitting the names by converting them into lists
+names = names_of_persons.split()
+# Getting the total number of items in list
+num_items = len(names)
+# To get the random choice variable as integers
+random_choice = random.randint(0, num_items - 1)
+# Choosing the person paying for the bill randomly we get
+person_paying = names[random_choice]
+# printing the outcome of the selection
+print(person_paying + " is paying for today's bill")
+# We can achieve the result with far less efforts using random choice as
+person_paying = random.choice(names)
+print(person_paying + " is paying for today's bill")
+
+'''Day 4.2: IndexErrors and Working with Nested Lists'''
+
+# One very common error to look for in python is index out of range error
+# Take States of America for example
+
+states_of_america = ['Delaware', 'Pennsylvania', 'New Jersey', 'Georgia', 'Connecticut', 'Massachusetts', 'Maryland', 'South Carolina', 'New Hampshire', 'Virginia', 'New York', 'North Carolina', 'Rhode Island', 'Vermont', 'Kentucky', 'Tennessee', 'Ohio', 'Louisiana', 'Indiana', 'Mississippi', 'Illinois', 'Alabama', 'Maine', 'Missouri', 'Arkansas', 'Michigan', 'Florida', 'Texas', 'Iowa', 'Wisconsin', 'California', 'Minnesota', 'Oregon', 'Kansas', 'West Virginia', 'Nevada', 'Nebraska', 'Colorado', 'North Dakota', 'South Dakota', 'Montana', 'Washington', 'Idaho', 'Wyoming', 'Utah', 'Oklahoma', 'New Mexico', 'Arizona', 'Alaska', 'Hawaii']
+
+# From the states of America listed above, we only have 50states starting from index 0 to 49, now trying to print an index 50 will give us index out of range error
+
+# print(states_of_america[50])
+
+# So we do here is to check the length of our lists to avoid these errors by typing
+# print(len(states_of_america))
+
+# Having gotten the number of states to be 50, then we can proceed to print the last state on the string
+
+# print(states_of_america[49])
+# Hawaii
+
+# or to avoid the error
+num_of_states = len(states_of_america)
+
+# To get rid of the error we can now print that the last state to join the union is:
+
+print(states_of_america[num_of_states - 1])
+
+# NESTED LIST
+# Using the delish.com to determine the fruits and vegetables with high pesticides, we have a list and we are now to create a nested list with the lists of items given
+
+fruits = ["Strawberries", "Nectarines", "Apples", "Grapes", "Peaches", "Cherries", "Pears"]
+vegetables = ["Spinach", "Kale", "Tomatoes", "Celery", "Potatoes"]
+# Defining the lists we get
+dirty_dozen = [fruits, vegetables]
+
+print(dirty_dozen[1][1])
+
+'''Day 4.3: [Interactive Coding Exercise] Treasure Map'''
+ 
+# 🚨 Don't change the code below 👇
+row1 = ["⬜️","️⬜️","️⬜️"]
+row2 = ["⬜️","⬜️","️⬜️"]
+row3 = ["⬜️️","⬜️️","⬜️️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this row 👇
+
+# We 
+horizontal = int(position[0])
+vertical = int(position[1])
+
+selected_row = map[vertical -1]
+selected_row[horizontal - 1] = "X"
+
+
+
+#Write your code above this row 👆
+
+# 🚨 Don't change the code below 👇
+print(f"{row1}\n{row2}\n{row3}")
+
+'''Day 4.4 - PROJECT: Rock Paper Scissors'''
+# Importing random
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+game_images = [rock, paper, scissors]
+
+user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors. \n"))
+if user_choice >= 3 or user_choice < 0:
+  print("You type an invalid number, you lose")
+
+else:
+  print(game_images[user_choice])
+
+computer_choice = random.randint(0, 2)
+print("Computer chose ")
+print(game_images[computer_choice])
+
+if user_choice == 0 and computer_choice == 2:
+  print("You win!")
+elif computer_choice == 0 and user_choice == 2:
+  print("You lose")
+elif computer_choice > user_choice:
+  print("You lose")
+elif user_choice > computer_choice:
+  print("You win!")
+elif computer_choice == user_choice:
+  print("It's a draw")
