@@ -1,0 +1,185 @@
+'''Day 5.0: PYTHON LOOPS:
+# A loop is something that happen repetitively'''
+
+# FOR LOOP: is for example 
+
+fruits = ["Apple", "Peach", "Pear"]
+for fruit in fruits:
+  print(fruit)
+
+# For loop in other word is assigning the value of let say fruit iteratively over Apple, Peach, Pear to print them in descending order (run above code for clarity)
+
+# A loop allows us to execute the same line of code multiple times
+
+# And in this case, we are executing the fruit loop three times (for "Apple", "Peach", "Pear")
+
+# We can also print additional loop added to the one above for example
+
+  print(fruit + " Pie")
+  # The indentation is very important in looping as printing inside the for loop area makes the code subject to for loop execution of code for the number of fruits lists or iteration
+
+'''Day 5.1: Average Height Exercise'''
+# INSTRUCTIONS: Write a program to calculate the average height of students from a lists of heights
+student_heights = input("Input a list of student height ").split()
+for n in range(0, len(student_heights)):
+  student_heights[n] = int(student_heights[n])
+# print(student_heights)
+
+# Write the code below
+# For the sum function
+total_height = 0
+for h in student_heights:
+  total_height += h
+# print(total_height)
+
+# To work on the len function
+number_of_students = 0
+for student in student_heights:
+  number_of_students += 1
+# print(number_of_students)
+
+# To calculate the student's average heights
+number_of_students = len(student_heights)
+average_height = round(total_height / number_of_students)
+print(average_height)
+
+'''Day 5.2: Highest Score Exercise'''
+
+# Inputing the students scores
+student_scores = input("Input a list of student scores: ").split()
+for n in range(0, len(student_scores)):
+  student_scores[n] = int(student_scores[n])
+print(student_scores)
+
+# Calculate the student with the highest score
+highest_score = 0
+for score in student_scores:
+  if score > highest_score:
+    highest_score = score
+print(f"The highest score in the class in: {highest_score}")
+
+'''Day 5.2.1: For Loops and the range() function'''
+# A range function of variables or data between e.g 1 and 10 
+
+for number in range(1, 15):
+  print(number)
+# By default, the number will print values from 1 to 14
+
+# We can also print a range of numbers at intervals let's say in an interval of 4
+
+for values in range(1, 100, 4):
+  print(values)
+
+# How to add all numbers from 1 to 100
+
+total = 0
+for number in range(1, 101):
+  total += number
+print(total)
+
+'''Day 5.3: Adding Evens Exercise'''
+# My own addition of even numbers
+total1 = 0
+for number in range(1, 101):
+  if number % 2 == 0:
+    total1 += number
+print(total1)
+
+# Angela's addition of even numbers
+total = 0
+for number in range(2, 101, 2):
+    total += number
+print(total)
+
+'''Day 5.4: Fizz Buzz Exercise'''
+# To write the program for the fizz buzz
+for fizzbuzz in range(101):
+  if fizzbuzz % 3 ==0 and fizzbuzz % 5 ==0:
+    print("fizzbuzz")
+    continue
+  elif fizzbuzz % 3 == 0:
+    print("fizz")
+    continue
+  elif fizzbuzz % 5 == 0:
+    print("buzz")
+    continue
+  print(fizzbuzz)
+
+# Angela's explanation
+for number in range(1, 101):
+  if number % 3 == 0 and number % 5 == 0:
+    print("FizzBuzz")
+  elif number % 3 == 0:
+    print("Fizz")
+        # Divisible by 3
+  elif number % 5 == 0:
+    print("Buzz")
+    # Divisible by 5
+  else:
+    print(number)
+
+'''Day 5: PROJECT'''
+# Today's project is to build a password generator
+
+import random
+import string 
+
+letters = " " + string.ascii_letters
+letters = list(letters)
+numbers = " " + string.digits
+symbols = " " + string.punctuation
+# print(chars)
+# print(numbers)
+# print(symbols)
+
+print("Welcome to PyPassword Generator!")
+
+num_letters = int(input("How many letters would you like in your password?\n"))
+num_symbols = int(input("How many symbols would you like?\n"))
+
+num_numbers = int(input("How many numbers would you like?\n"))
+
+# We can generate the password in an easy way and also a hard way
+
+# Easylevel
+
+# We can generate the password in an order starting with letters to symbols to numbers
+password = ""
+# Assuming the no. of letters user need is 4
+for char in range(1, num_letters + 1):
+  password += random.choice(letters)
+
+for char in range(1, num_symbols + 1):
+  password += random.choice(symbols)
+
+for char in range(1, num_numbers + 1):
+  password += random.choice(numbers)
+
+print(password)
+
+# Hardlevel
+
+password_list = []
+# Assuming the no. of letters user need is 4
+for char in range(1, num_letters + 1):
+  password_list.append(random.choice(letters))
+
+for char in range(1, num_symbols + 1):
+  password_list += random.choice(symbols)
+
+for char in range(1, num_numbers + 1):
+  password_list += random.choice(numbers)
+
+print(password_list)
+# To shuffle the password list
+random.shuffle(password_list)
+# Printing the shuffled password list
+print(password_list)
+
+# To turn our shuffled password into a string, we can say
+
+password = ""
+for char in password_list:
+  password += char
+  print(f"Your password is: {password}")
+  
