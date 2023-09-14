@@ -1,0 +1,153 @@
+# Day-6: Functions, Code Blocks and While Loops
+
+'''Day6.1.0 Defining and Calling Python Functions'''
+print("Hello")
+num_char = len("Hello")
+print(num_char)
+
+# def function: This is to define a function
+
+# Note: variable a function definition are similar except for that function definition has parenthesis while variable don't
+
+# HOW DO WE CREATE A FUNCTION IN PYTHON
+# 1. We first define (def) the function to specify what the function should do and we do that by first using the def keyword by first giving the function a name and then comes a set of parenthesis and a colon, after that we get to put the line of code which will be included in the function and must be indented
+# 2. After defining the function, we then call it, in other words its specify as calling the function
+
+# In this chapter, we define a function that shows how a robot move via reeborg's world
+
+'''from Reeborg
+def turn_right():
+  turn_left()
+  turn_left()
+  turn_left()
+
+# Draw Square
+turn_left()
+move()
+turn_right()
+move()
+turn_right()
+move()
+turn_right()
+move()'''
+
+'''Day 6.2.0: The hurdles Loop Challenge:
+
+# Here we write a code showing a robot going through a hurdle via Reeborg's World
+
+# We define the hurdle's turn_right follow by
+def turn_right():
+  turn_left()
+  turn_left()
+  turn_left()
+
+# We follow define jump within the range at which we want the robot to go or jump
+
+def jump():
+  move()
+  turn_left()
+  move()
+  turn_right()
+  move()
+  turn_right()
+  move()
+  turn_left()
+
+# Write a for loop within a range of six looping then jump
+for step in range(6):
+  jump() #This code is only written in Reeborg's World template'''
+
+'''Dat-6.3: Indentation in Python'''
+# Indentation can be done in two ways
+# 1. By spaces
+# 2. By Tab
+
+'''Day-6.4: While Loops
+
+# While loops are the continuous iteration of variables until the variable or data is not true.
+
+# While is like the for loop but the difference is that for loops stops when the conditions are not true or otherwise but while continue to till the end of time unless not true
+
+#We first define the turn_right since there is nothing like turn right in the reeborg's keyboard
+# HURDLES CHALLENGE
+# This code is written on Reeborg's World to show how a robot jump over some hurdles until he reaches a flag to indicate the end of the race using while loops
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+# We then define jump within the range at which we want the robot to jump    
+def jump():
+    move()
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+ 
+while not at_goal():
+    jump()'''
+
+'''Day-6.5: Hurdles Challenge using while loops
+
+# Another hurdle Challenge using while loop to jump some single hurdles in some places while in others we have multiple hurdles. In this challenge, we are using both the while and the if conditional statements together as shown below
+
+#We first define the turn_right since there is nothing like turn right in the reeborg's keyboard
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+# We then define jump within the range at which we want the robot to jump    
+def jump():
+    # We have to remove this move()
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+ # In the double hurdles, we will use both the while and the if statement to show our direction of flow
+while not at_goal():
+    # We are having a conditional statement if there is wall in front jump() else the robot should keep moving
+    if wall_in_front():
+        jump()
+    else:
+        move() #Note that this code can only be run on Reeborg's World'''
+
+'''Day-6.6: Jumping over Hurdles with Variable Heights
+# In this challenge, we have some hurdles with multiple heights that requires the robot to move up twice or more, so to achieve that, we used the while loop to check if the there is wall in front and another while loop to check if the front is clear
+
+#We first define the turn_right since there is nothing like turn right in the reeborg's keyboard
+def turn_right():
+    turn_left()
+    turn_left()
+    turn_left()
+
+# We then define jump within the range at which we want the robot to jump    
+def jump():
+    # We have to remove this move()
+    turn_left()
+    #Here our robot will check if there is wall in front, it will move up else it will continue moving forward
+    while wall_on_right():
+        move()
+    #After the hurdle the robot is to turn right and keep moving in the space of no hurdles
+    turn_right()
+    move()
+    turn_right()
+    #When the front is clear, the robot will keep moving forward
+    while front_is_clear():
+        move()
+    turn_left()  
+ # In the double hurdles, we will use both the while and the if statement to show our direction of flow
+while not at_goal():
+    # We are having a conditional statement if there is wall in front jump() else the robot should keep moving
+    if wall_in_front():
+        jump()
+    else:
+        move() #Note that this code can only be rund on Reeborg's World page'''
+
+'''DAY-6.7: FINAL PROJECT--Escaping the Maze'''
